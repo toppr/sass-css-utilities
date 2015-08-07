@@ -4,7 +4,7 @@
     // Padding all
     @each $val in $values {
 
-        .#{$prefix}pad-#{$val}{
+        .#{$prefix}p-#{$val}{
             padding: #{$val}px#{$scu-val-important-paddings};
         }
     }

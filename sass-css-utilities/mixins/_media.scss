@@ -1,3 +1,10 @@
+@mixin less-than-width($device-width) {
+    @media only screen and (max-width: $device-width - 1) { @content; }
+}
+
+@mixin more-than-width($device-width) {
+    @media only screen and (min-width: $device-width + 1) { @content; }
+}
 
 @mixin at-least-width($device-width) {
     @media only screen and (min-width: $device-width) { @content; }
@@ -14,6 +21,9 @@
     @else if $device == tablet {
         @media only screen and (min-width: $scu-tablet-min-width) and (max-width: $scu-tablet-max-width) { @content; }
     }
+    @else if $device == desktop-tablet {
+        @media only screen and (min-width: $scu-tablet-min-width) { @content; }
+    }
     @else if $device == phone-tablet {
         @media only screen and (max-width: $scu-tablet-max-width) { @content; }
     }
@@ -22,9 +32,12 @@
     }
 }
 
-@mixin bg-image-2x($file, $type, $bg-size:false) {
-    background-repeat:no-repeat;
+@mixin bg-image-2x($file, $type, $bg-size:false, $no-repeat:true) {
     background-image: url($file + '.' + $type);
+
+    @if $no-repeat{
+        background-repeat:no-repeat;
+    }
 
     @if $bg-size{
         -webkit-background-size: $bg-size;  // Needed for Android v < 3

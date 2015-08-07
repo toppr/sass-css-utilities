@@ -4,7 +4,7 @@
     // Margin all
     @each $val in $values{
 
-        .#{$prefix}mar-#{$val}{
+        .#{$prefix}m-#{$val}{
             margin: #{$val}px#{$scu-val-important-margins};
         }
     }
@@ -40,8 +40,7 @@
 
 // General margin classes
 
-    .#{$scu-val-prefix}ma,
-    .#{$scu-val-prefix}mar-auto {
+    .#{$scu-val-prefix}ma {
         margin-left: auto#{$scu-val-important-margins};
         margin-right: auto#{$scu-val-important-margins};
     }
@@ -55,8 +54,7 @@
 
     @if $scu-build-tablet-classes{
         @include if-device(tablet) {
-            .#{$scu-val-prefix-tablet}ma,
-            .#{$scu-val-prefix-tablet}mar-auto {
+            .#{$scu-val-prefix-tablet}ma {
                 margin-left: auto#{$scu-val-important-margins};
                 margin-right: auto#{$scu-val-important-margins};
             }
@@ -76,8 +74,7 @@
 
     @if $scu-build-phone-tablet-classes{
         @include if-device(phone-tablet) {
-            .#{$scu-val-prefix-phone-tablet}ma,
-            .#{$scu-val-prefix-phone-tablet}mar-auto {
+            .#{$scu-val-prefix-phone-tablet}ma{
                 margin-left: auto#{$scu-val-important-margins};
                 margin-right: auto#{$scu-val-important-margins};
             }
@@ -97,8 +94,7 @@
 
     @if $scu-build-phone-classes{
         @include if-device(phone) {
-            .#{$scu-val-prefix-phone}ma,
-            .#{$scu-val-prefix-phone}mar-auto {
+            .#{$scu-val-prefix-phone}ma{
                 margin-left: auto#{$scu-val-important-margins};
                 margin-right: auto#{$scu-val-important-margins};
             }
